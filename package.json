@@ -1,0 +1,27 @@
+{
+  "name": "apitodolist",
+  "version": "1.0.0",
+  "description": "api de lista de tarefas, construida com node e express",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "test": "jest --verbose"
+  },
+  "keywords": [],
+  "author": "Jean Fernandes",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.3",
+    "node-fetch": "^3.2.10"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1",
+    "nodemon": "^2.0.20",
+    "supertest": "^6.3.3"
+  }
+}
