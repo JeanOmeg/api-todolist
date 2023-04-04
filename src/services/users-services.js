@@ -1,8 +1,6 @@
 const connection = require('./connection')
-const getDate = require('../functions/getDate')
+const getDate = require('../functions/get-date')
 const bcrypt = require('bcrypt')
-
-// Retorna para usersControllers
 
 const getAllUsers = async (id) => {
   const [admin] = await connection.execute('SELECT admin FROM users WHERE id = ?', [id])

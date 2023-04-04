@@ -1,5 +1,5 @@
 const jsonwebtoken = require('jsonwebtoken')
-const usersModel = require('../models/usersModel')
+const usersModel = require('../services/users-services')
 
 require('dotenv').config()
 

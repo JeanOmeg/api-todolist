@@ -1,79 +1,79 @@
 const validateTitle = (request, response, next) => {
-  const { body } = request;
-  const { headers } = request;
+  const { body } = request
+  const { headers } = request
   if (body.title === undefined) {
-    return response.status(400).json({ message: 'Title is required!' });
+    return response.status(400).json({ message: 'Title is required!' })
   }
   if (body.title === '') {
-    return response.status(400).json({ message: 'Title cannot be empty!' });
+    return response.status(400).json({ message: 'Title cannot be empty!' })
   }
   if (headers.user.id === undefined) {
-    return response.status(400).json({ message: 'ID is required!' });
+    return response.status(400).json({ message: 'ID is required!' })
   }
   if (headers.user.id === '') {
-    return response.status(400).json({ message: 'ID cannot be empty!' });
+    return response.status(400).json({ message: 'ID cannot be empty!' })
   }
-  next();
-};
+  next()
+}
 
 const validateStatus = (request, response, next) => {
-  const { body } = request;
+  const { body } = request
   if (body.status === undefined) {
-    return response.status(400).json({ message: 'Status is required!' });
+    return response.status(400).json({ message: 'Status is required!' })
   }
   if (body.status === '') {
-    return response.status(400).json({ message: 'Status cannot be empty!' });
+    return response.status(400).json({ message: 'Status cannot be empty!' })
   }
-  next();
-};
+  next()
+}
 
 const validateId = (request, response, next) => {
-  const { params } = request;
-  params.id = params.id.replace(/\s/g, '');
+  const { params } = request
+  params.id = params.id.replace(/\s/g, '')
   if (!Number(params.id)) {
-    return response.status(400).json({ message: 'Invalid ID!' });
+    return response.status(400).json({ message: 'Invalid ID!' })
   }
-  next();
-};
+  next()
+}
 
 const validateUser = (request, response, next) => {
-  const { body } = request;
+  const { body } = request
   if (body.real_name === undefined) {
-    return response.status(400).json({ message: 'Real name is required!' });
+    return response.status(400).json({ message: 'Real name is required!' })
   }
   if (body.real_name === '') {
-    return response.status(400).json({ message: 'Real name cannot be empty!' });
+    return response.status(400).json({ message: 'Real name cannot be empty!' })
   }
   if (body.username === undefined) {
-    return response.status(400).json({ message: 'Username is required!' });
+    return response.status(400).json({ message: 'Username is required!' })
   }
   if (body.username === '') {
-    return response.status(400).json({ message: 'Username cannot be empty!' });
+    return response.status(400).json({ message: 'Username cannot be empty!' })
   }
   if (body.phone === undefined) {
-    return response.status(400).json({ message: 'Phone is required!' });
+    return response.status(400).json({ message: 'Phone is required!' })
   }
   if (body.phone === '') {
-    return response.status(400).json({ message: 'Phone cannot be empty!' });
+    return response.status(400).json({ message: 'Phone cannot be empty!' })
   }
   if (body.email === undefined) {
-    return response.status(400).json({ message: 'Email is required!' });
+    return response.status(400).json({ message: 'Email is required!' })
   }
   if (body.email === '') {
-    return response.status(400).json({ message: 'Email cannot be empty!' });
+    return response.status(400).json({ message: 'Email cannot be empty!' })
   }
   if (body.user_password === undefined) {
-    return response.status(400).json({ message: 'Password is required!' });
+    return response.status(400).json({ message: 'Password is required!' })
   }
   if (body.user_password === '') {
-    return response.status(400).json({ message: 'Password cannot be empty!' });
+    return response.status(400).json({ message: 'Password cannot be empty!' })
   }
-  next();
-};
+  next()
+}
 
 module.exports = {
   validateTitle,
   validateStatus,
   validateId,
   validateUser,
-};
+}
