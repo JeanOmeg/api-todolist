@@ -1,5 +1,5 @@
 const jsonwebtoken = require('jsonwebtoken')
-const usersModel = require('../services/users-model')
+const usersModel = require('../services/users-services')
 require('dotenv').config()
 
 async function tokenValidated(request, response, next) {
