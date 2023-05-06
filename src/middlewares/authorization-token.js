@@ -1,5 +1,5 @@
 const jsonwebtoken = require('jsonwebtoken')
-const usersModel = require('../services/users-services')
+const usersService = require('../services/users-services')
 require('dotenv').config()
 
 async function tokenValidated(request, response, next) {
@@ -7,7 +7,7 @@ async function tokenValidated(request, response, next) {
   if (!token) {
     return response.status(401).send('Access denied. No token provided.')
   }
-  const blackListedToken = await usersModel.getInvalidedToken(token)
+  const blackListedToken = await usersService.getInvalidedToken(token)
   const comp = blackListedToken && blackListedToken.length > 0
   if (comp) return response.status(401).send('Access denied. Invalid token')
   try {

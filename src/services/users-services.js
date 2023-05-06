@@ -15,15 +15,10 @@ const getAllUsers = async (id) => {
 
 const getByLogin = async (email, password) => {
   const [encryptedPass] = await connection.execute('SELECT user_password FROM users WHERE email = ?', [email])
-
-  if (!encryptedPass[0]) {
-    return null
-  }
+  if (!encryptedPass[0]) return null
 
   const comp = await bcrypt.compare(password, encryptedPass[0].user_password)
-  if (!comp) {
-    return null
-  }
+  if (!comp) return null
 
   await connection.execute('UPDATE users SET online = ? WHERE email = ?', ['🟢', email])
 
