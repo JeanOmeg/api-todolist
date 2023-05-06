@@ -89,7 +89,7 @@ describe('Testes de login', () => {
         {
           email: 'jean@gmail.com',
           password: '1234',
-        }
+        },
       )
     }
 

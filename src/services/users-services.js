@@ -27,10 +27,10 @@ const getByLogin = async (email, password) => {
 
   await connection.execute('UPDATE users SET online = ? WHERE email = ?', ['true', email])
 
-  const [user] = await connection.execute(
-    'SELECT email, id, admin FROM users WHERE email = ? and user_password = ? LIMIT 1',
-    [email, encryptedPass[0].user_password]
-  )
+  const [user] = await connection.execute('SELECT email, id, admin FROM users WHERE email = ? and user_password = ? LIMIT 1', [
+    email,
+    encryptedPass[0].user_password,
+  ])
 
   return user
 }

@@ -1,7 +1,5 @@
 const tasksModel = require('../services/tasks-services')
 
-// Pega do tasksModel
-
 const getByIdUser = async (request, response) => {
   const tasks = await tasksModel.getByIdUser(request.headers.user.id)
   return response.status(200).json(tasks)

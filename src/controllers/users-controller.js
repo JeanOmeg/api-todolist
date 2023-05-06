@@ -3,8 +3,6 @@ const usersServices = require('../services/users-services')
 
 require('dotenv').config()
 
-// Pega do usersModel
-
 const getAllUsers = async (request, response) => {
   const users = await usersServices.getAllUsers(request.headers.user.id)
   return response.status(200).json(users)

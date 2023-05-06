@@ -19,9 +19,7 @@ describe('Teste de delete de tarefas', () => {
   })
 
   test('Deve falhar na hora de deletar a tarefa, está passando um parametro errado', async () => {
-    const res = await request(app)
-      .delete('/tasks/97asda   ~][{.,,,,;asd')
-      .set('Authorization', `Bearer ${process.env.AUTH_TOKEN}`)
+    const res = await request(app).delete('/tasks/97asda   ~][{.,,,,;asd').set('Authorization', `Bearer ${process.env.AUTH_TOKEN}`)
 
     expect(res.statusCode).toBe(400)
     expect(res.body).toEqual({ message: 'Invalid ID!' })

@@ -13,13 +13,7 @@ const getById = async (id) => {
 
 const createTask = async (id, task) => {
   const query = 'INSERT INTO tasks(title, status, created, updated, id_user) VALUES (?, ?, ?, ?, ?)'
-  const [createdTask] = await connection.execute(query, [
-    task.title,
-    'Not started!',
-    getDate.getDate(),
-    'Not updated!',
-    id,
-  ])
+  const [createdTask] = await connection.execute(query, [task.title, 'Not started!', getDate.getDate(), 'Not updated!', id])
   return { insertId: createdTask.insertId }
 }
 
