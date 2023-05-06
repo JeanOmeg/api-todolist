@@ -1,4 +1,4 @@
-import { getDate } from '../utils/functions/get-date'
+const date = require('../utils/functions/get-date')
 const connection = require('./connection')
 const bcrypt = require('bcrypt')
 
@@ -43,8 +43,8 @@ const createUser = async (user) => {
     user.username,
     user.real_name,
     user.phone,
-    getDate(),
-    getDate(),
+    date.getDate(),
+    date.getDate(),
     user.email,
     password,
     'token',
@@ -67,7 +67,7 @@ const getInvalidedToken = async (token) => {
 const invalidToken = async (token, id_user) => {
   const [invalidedToken] = await connection.execute('INSERT INTO tokens(token, created_at, id_user) VALUES (?, ?, ?)', [
     token,
-    getDate(),
+    date.getDate(),
     id_user,
   ])
   return invalidedToken
