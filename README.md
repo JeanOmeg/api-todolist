@@ -1,12 +1,12 @@
 # todoApi
 
 ## Requisitos
-_NODE 18_ e o _MySQL_ (recomendo usar o Docker)
+**_NODE 18_** e o **_MySQL_** (recomendo usar o **_Docker_**)
 
 ## Instalação
-Para instalar as dependencias do **NODE**, rode o **_yarn_** (recomendo) ou **_npm_**.
+Para instalar as dependencias do **_NODE_**, rode o **_yarn_** (recomendo) ou **_npm_**.
 
-Crie um DB **MYSQL** com 3 tabelas, a primeira chamada **_tasks_**, a segunda **_users_** e a terceira **_tokens_**.
+Crie um DB **_MYSQL_** com 3 tabelas, a primeira chamada **_tasks_**, a segunda **_users_** e a terceira **_tokens_**.
 Remomendo usar o Docker pela simplicidade e praticidade.
 Você pode rodar o comando abaixo para criar um container MySQL no Docker:
 
@@ -28,7 +28,7 @@ CREATE TABLE tasks(
 );
 ```
 
-## Tabela _users_
+## Tabela **_users_**
 ```
 CREATE TABLE users(  
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -43,13 +43,13 @@ CREATE TABLE users(
 );
 ```
 
-## Tabela _tokens_
+## Tabela **_tokens_**
 ```
 ...
 ```
 
 ## Testes unitarios
-Existem alguns testes de exemplos na pasta ****tests****
+Existem alguns testes de exemplos na pasta **_tests_**
 
 ## Execução
-No package.json, o script DEV está setado para executar _nodemon src/server.js_
+No package.json, o script DEV está setado para executar **_nodemon src/server.js_**
