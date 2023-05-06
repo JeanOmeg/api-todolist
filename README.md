@@ -1,26 +1,59 @@
 # todoApi
 
-## Instalação - teste
+## Requisitos
 
-Instale as dependencias do _**NODE-JS (18)**_.
-Crie um DB MYSQL com 3 tabelas, a primeira chamada _tasks_, a segunda _users_ e a terceira _tokens_.
+_NODE 18_ e o _MySQL_ (recomendo usar o Docker)
 
-Set as config do DB igual o arquivo **.env.example**
+## Instalação
 
-## Tabela _tasks_
+Para instalar as dependencias do **NODE**, rode o **_yarn_** (recomendo) ou **_npm_**.
 
-### id INT (com incrementação automática) | title varchar(150) | status varchar(150) | created_at varchar(45) | update_at varchar(45) | id_user INT
+Crie um DB **MYSQL** com 3 tabelas, a primeira chamada **_tasks_**, a segunda **_users_** e a terceira **_tokens_**.
+Remomendo usar o Docker pela simplicidade e praticidade.
+Você pode rodar o comando abaixo para criar um container MySQL no Docker:
 
-Todos as colunas são NOT NULL
+"""
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=root - p 3006:3006 -d mysql
+"""
+
+Set as config do DB igual o arquivo **_.env.example_**, e você pode usar o arquivo ****create_table_template.sql**** (utils/sql) para criar as tabelas.
+
+## Tabela **_tasks_**
+"""
+CREATE TABLE tasks(  
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    status VARCHAR(255) NOT NULL,
+    created VARCHAR(255) NOT NULL,
+    updated VARCHAR(255) NOT NULL,
+    id_user INT NOT NULL
+);
+"""
 
 ## Tabela _users_
 
+"""
+CREATE TABLE users(  
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    user_name VARCHAR(255) NOT NULL,
+    real_name VARCHAR(255) NOT NULL,
+    created VARCHAR(255) NOT NULL,
+    updated VARCHAR(255) NOT NULL,
+    phone VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    user_password VARCHAR(255) NOT NULL,
+    token VARCHAR(1000) NOT NULL
+);
+"""
+
 ## Tabela _tokens_
 
-### id INT (com incrementação automática) | username varchar(50) | real_name varchar(250) | phone varchar(50) | email varchar(100) | user_password varchar(250) | token varchar(600)
+...
 
-Todas as colunas são NOT NULL...
+## Testes unitarios
+
+Existem alguns testes de exemplos na pasta ****tests****
 
 ## Execução
 
-No package.json, o script START está setado para executar _nodemon src/server.js_
+No package.json, o script DEV está setado para executar _nodemon src/server.js_

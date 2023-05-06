@@ -1,5 +1,5 @@
 const connection = require('./connection')
-const getDate = require('../functions/get-date')
+const getDate = require('../utils/functions/get-date')
 const bcrypt = require('bcrypt')
 
 const getAllUsers = async (id) => {

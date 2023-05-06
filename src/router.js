@@ -25,13 +25,7 @@ router.post('/tasks', validate.validateTitle, tasksController.createTask)
 
 router.get('/tasks/:id', validate.validateId, tasksController.getById)
 
-router.put(
-  '/tasks/:id',
-  validate.validateId,
-  validate.validateTitle,
-  validate.validateStatus,
-  tasksController.updateTask
-)
+router.put('/tasks/:id', validate.validateId, validate.validateTitle, validate.validateStatus, tasksController.updateTask)
 
 router.delete('/tasks/:id', validate.validateId, tasksController.deleteTask)
 

@@ -1,5 +1,5 @@
 const connection = require('./connection')
-const getDate = require('../functions/get-date')
+const getDate = require('../utils/functions/get-date')
 
 const getByIdUser = async (id) => {
   const [tasks] = await connection.execute('SELECT * FROM tasks WHERE id_user = ?', [id])
