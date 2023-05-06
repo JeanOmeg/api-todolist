@@ -15,5 +15,7 @@ CREATE TABLE users(
     phone VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     user_password VARCHAR(255) NOT NULL,
-    token VARCHAR(1000) NOT NULL
+    token VARCHAR(1000) NOT NULL,
+    admin VARCHAR(50) NOT NULL,
+    online VARCHAR(50) NOT NULL
 );
