@@ -19,3 +19,8 @@ CREATE TABLE users(
     admin VARCHAR(50) NOT NULL,
     online VARCHAR(50) NOT NULL
 );
+CREATE TABLE tokens(
+    token VARCHAR(1000) NOT NULL,
+    created VARCHAR(255) NOT NULL,
+    id_user INT NOT NULL
+);
