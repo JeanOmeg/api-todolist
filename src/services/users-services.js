@@ -25,7 +25,7 @@ const getByLogin = async (email, password) => {
     return null
   }
 
-  await connection.execute('UPDATE users SET online = ? WHERE email = ?', ['true', email])
+  await connection.execute('UPDATE users SET online = ? WHERE email = ?', ['🟢', email])
 
   const [user] = await connection.execute('SELECT email, id, admin FROM users WHERE email = ? and user_password = ? LIMIT 1', [
     email,
@@ -42,20 +42,20 @@ const createUser = async (user) => {
   const [createdUser] = await connection.execute(query, [
     user.username,
     user.real_name,
+    date.getDate(),
+    date.getDate(),
     user.phone,
-    date.getDate(),
-    date.getDate(),
     user.email,
     password,
     'token',
     'false',
-    'online',
+    '🔴',
   ])
   return { insertId: createdUser.insertId }
 }
 
 const getLogout = async (id) => {
-  const [logout] = await connection.execute('UPDATE users SET online = ? WHERE id = ?', ['false', id])
+  const [logout] = await connection.execute('UPDATE users SET online = ? WHERE id = ?', ['🔴', id])
   return logout
 }
 
