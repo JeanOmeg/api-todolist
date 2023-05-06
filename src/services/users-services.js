@@ -65,7 +65,7 @@ const getInvalidedToken = async (token) => {
 }
 
 const invalidToken = async (token, id_user) => {
-  const [invalidedToken] = await connection.execute('INSERT INTO tokens(token, created_at, id_user) VALUES (?, ?, ?)', [
+  const [invalidedToken] = await connection.execute('INSERT INTO tokens(token, created, id_user) VALUES (?, ?, ?)', [
     token,
     date.getDate(),
     id_user,
