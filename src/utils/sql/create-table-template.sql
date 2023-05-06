@@ -8,7 +8,7 @@ CREATE TABLE tasks(
 );
 CREATE TABLE users(  
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    user_name VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL,
     real_name VARCHAR(255) NOT NULL,
     created VARCHAR(255) NOT NULL,
     updated VARCHAR(255) NOT NULL,
