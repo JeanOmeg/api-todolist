@@ -3,7 +3,7 @@
 ## Instalação
 
 Instale as dependencias do _**NODE-JS (18)**_.
-Crie um DB MYSQL com duas tabelas, a primeira chamada _tasks_ e a segunda _users_.
+Crie um DB MYSQL com 3 tabelas, a primeira chamada _tasks_, a segunda _users_ e a terceira _tokens_.
 
 Set as config do DB igual o arquivo **.env.example**
 
