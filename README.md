@@ -7,8 +7,8 @@
 Para instalar as dependencias do **_NODE_**, rode o **_yarn_** (recomendo) ou **_npm_**.
 
 Crie um DB **_MYSQL_** com 3 tabelas, a primeira chamada **_tasks_**, a segunda **_users_** e a terceira **_tokens_**.
-Remomendo usar o Docker pela simplicidade e praticidade.
-Você pode rodar o comando abaixo para criar um container MySQL no Docker:
+Remomendo usar o **_Docker_** pela simplicidade e praticidade.
+Você pode rodar o comando abaixo para criar um container **_MySQL_** no **_Docker_**:
 
 ```
 docker run --name mysql -e MYSQL_ROOT_PASSWORD=root - p 3006:3006 -d mysql
@@ -49,7 +49,13 @@ CREATE TABLE users(
 ```
 
 ## Testes unitarios
-Existem alguns testes de exemplos na pasta **_tests_**
+Existem alguns testes de exemplos na pasta **_tests_**, para rodar os testes execute o comando:
+```
+yarn test
+```
 
 ## Execução
-No package.json, o script DEV está setado para executar **_nodemon src/server.js_**
+No package.json, o script **_dev_** está setado para executar **_nodemon src/server.js_**, execute o comando:
+```
+yarn dev
+```
