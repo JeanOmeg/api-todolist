@@ -15,6 +15,8 @@ Todos as colunas são NOT NULL
 
 ## Tabela _users_
 
+## Tabela _tokens_
+
 ### id INT (com incrementação automática) | username varchar(50) | real_name varchar(250) | phone varchar(50) | email varchar(100) | user_password varchar(250) | token varchar(600)
 
 Todas as colunas são NOT NULL
