@@ -16,7 +16,7 @@ Remomendo usar o **_Docker_** pela simplicidade e praticidade.
 Você pode rodar o comando abaixo para criar um container **_MySQL_** no **_Docker_**:
 
 ```
-docker run --name mysql -e MYSQL_ROOT_PASSWORD=root - p 3006:3006 -d mysql
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql:5.7
 ```
 
 Set as config do DB igual o arquivo **_.env.example_**, e você pode usar o arquivo **create_table_template.sql** (utils/sql) para criar as tabelas.
